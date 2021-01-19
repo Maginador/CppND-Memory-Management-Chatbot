@@ -75,7 +75,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
 {
     // load file with answer graph elements
     std::ifstream file(filename);
-    std::cout<<"Teste 01 \n";
     // check for file availability and process it line by line
     if (file)
     {
@@ -183,8 +182,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                 }
             }
         } // eof loop over all lines in the file
-            std::cout<<"Teste 02 \n";
-
         file.close();
 
     } // eof check for file availability
@@ -196,14 +193,10 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
 
     //// STUDENT CODE
     ////
-            std::cout<<"Teste 03 \n";
-
     // identify root node
     GraphNode *rootNode = nullptr;
     for (auto it = std::begin(_nodes); it != std::end(_nodes); ++it)
     {
-        std::cout<<"Teste 03.1 \n";
-
         // search for nodes which have no incoming edges
         if ((*it)->GetNumberOfParents() == 0)
         {
@@ -218,8 +211,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
             }
         }
     }
-            std::cout<<"Teste 04 \n";
-
     // add chatbot to graph root node
     ChatBot _lChatBot("../images/chatbot.png");
     _lChatBot.SetChatLogicHandle(this);
